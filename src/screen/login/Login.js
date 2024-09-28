@@ -42,7 +42,7 @@ const Login = () => {
       .then(response => response.json())
       .then(json => {
         if (json?.data) {
-          AsyncStorage.setItem('Dusun', json.data.access_token);
+          AsyncStorage.setItem('rumah', json.data.access_token);
           setTimeout(() => {
             Alert.alert('Anda berhasil login');
             setValue('');
@@ -102,7 +102,7 @@ const Login = () => {
             value={value}
             onChangeText={text => setValue(text)}
             placeholder="Masukan Username"
-            style={{marginLeft: 20}}
+            style={{marginLeft: 20, color: 'black'}}
           />
         </View>
       </View>
@@ -129,7 +129,7 @@ const Login = () => {
               value={Password}
               onChangeText={text => setPassword(text)}
               placeholder="Masukan Password"
-              style={{marginLeft: 20}}
+              style={{marginLeft: 20, color: 'black'}}
               secureTextEntry={hidden}
             />
             <TouchableOpacity

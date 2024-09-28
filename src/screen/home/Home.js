@@ -18,7 +18,7 @@ const Home = () => {
     navigation.navigate('Dusun');
   };
   const getDusun = () => {
-    AsyncStorage.getItem('token')
+    AsyncStorage.getItem('rumah')
       .then(value => {
         console.log('token', value);
         return fetch('https://dev-disambi.sandboxindonesia.id/api/dusun/', {
@@ -31,9 +31,8 @@ const Home = () => {
         })
           .then(response => response.json())
           .then(json => {
-            console.warn('data dusun', json);
             if (json?.data) {
-              setData(json?.data);
+              setDusun(json?.data);
             }
           })
           .catch(error => {
@@ -88,7 +87,7 @@ const Home = () => {
             color: '#e04a3f',
             fontWeight: '600',
             fontSize: 30,
-            marginTop: -20,
+            marginTop: -10,
           }}>
           Dusun
         </Text>
@@ -111,7 +110,7 @@ const Home = () => {
           elevation: 2,
         }}
         onPress={() => pindahHalaman()}>
-        <Text style={{fontSize: 40}}>+</Text>
+        <Text style={{fontSize: 40, color: 'black'}}>+</Text>
       </TouchableOpacity>
     </View>
   );

@@ -8,7 +8,7 @@ const TambahDusun = () => {
   const [input, setInput] = useState();
   const pindahYuuk = () => {
     tambah();
-    navigation.goBack('');
+    navigation.goBack();
   };
   const tambah = () => {
     AsyncStorage.getItem('token')
@@ -46,7 +46,7 @@ const TambahDusun = () => {
           value={input}
           onChangeText={text => setInput(text)}
           placeholder="Masukan Dusun yang inginkan"
-          style={{marginLeft: 10}}
+          style={{marginLeft: 10, color: 'black'}}
         />
       </View>
       <TouchableOpacity

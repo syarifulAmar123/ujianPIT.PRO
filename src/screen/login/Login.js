@@ -18,7 +18,7 @@ const Login = () => {
   const [ceklis, setCeklis] = useState(false);
   const [hidden, setHidden] = useState(false);
 
-  const kirimDusun = () => {};
+  // const kirimDusun = () => {};
 
   const handlerHidden = () => {
     setHidden(!hidden);
@@ -27,7 +27,7 @@ const Login = () => {
     setCeklis(!ceklis);
   };
 
-  const login = () => {
+  const Masuk = () => {
     fetch('https://dev-disambi.sandboxindonesia.id/api/auth/login/', {
       method: 'POST',
       headers: {
@@ -196,7 +196,7 @@ const Login = () => {
           marginTop: 30,
           borderRadius: 10,
         }}
-        onPress={login}>
+        onPress={() => Masuk()}>
         <Text style={{color: 'white', fontSize: 18, fontWeight: '400'}}>
           Login
         </Text>
